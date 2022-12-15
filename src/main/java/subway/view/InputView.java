@@ -8,7 +8,7 @@ public class InputView {
 
     private static final String INPUT_MENU = "원하는 기능을 선택하세요.";
     private static final String INPUT_STATION_ADD = "등록할 역 이름을 입력하세요.";
-    private static final String INPUT_STATION_DELETE = "등록할 역 이름을 입력하세요.";
+    private static final String INPUT_STATION_DELETE = "삭제할 역 이름을 입력하세요.";
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -21,6 +21,13 @@ public class InputView {
 
     public static String inputStationAdd() {
         System.out.println(OUTPUT_PREFIX + INPUT_STATION_ADD);
+        String input = scanner.next();
+        System.out.println();
+        return input;
+    }
+
+    public static String inputStationDelete() {
+        System.out.println(OUTPUT_PREFIX + INPUT_STATION_DELETE);
         String input = scanner.next();
         System.out.println();
         return input;
