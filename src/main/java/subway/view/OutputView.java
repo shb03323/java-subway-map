@@ -13,6 +13,14 @@ public class OutputView {
                 + "Q. 종료\n");
     }
 
+    public static void printStationMenu() {
+        System.out.println(OUTPUT_PREFIX + "역 관리 화면\n"
+                + "1. 역 등록\n"
+                + "2. 역 삭제\n"
+                + "3. 역 조회\n"
+                + "B. 돌아가기\n");
+    }
+
     public static void printErrorMessage(String message) {
         System.out.println(message);
     }

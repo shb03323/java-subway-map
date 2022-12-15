@@ -3,5 +3,5 @@ package subway.controller;
 @FunctionalInterface
 public interface Controllable {
 
-    void process();
+    void runMenu();
 }

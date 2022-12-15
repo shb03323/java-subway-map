@@ -17,11 +17,13 @@ public class MainMenuController {
     }
 
     public void run() {
-        OutputView.printMainMenu();
         SubwayInitializer.init();
+        OutputView.printMainMenu();
         MainMenu selection = selectMenu();
         while (!selection.equals(MainMenu.QUIT)) {
             progress(selection);
+            OutputView.printMainMenu();
+            selection = selectMenu();
         }
     }
 
@@ -44,6 +46,6 @@ public class MainMenuController {
     }
 
     private void progress(MainMenu selection) {
-        controllers.get(selection).process();
+        controllers.get(selection).runMenu();
     }
 }

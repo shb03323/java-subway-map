@@ -3,7 +3,7 @@ package subway.controller;
 public class QuitSystemController implements Controllable {
 
     @Override
-    public void process() {
+    public void runMenu() {
 
     }
 }

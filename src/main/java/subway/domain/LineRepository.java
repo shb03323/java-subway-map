@@ -26,6 +26,6 @@ public class LineRepository {
         return lines.stream()
                 .filter(line -> line.getName().equals(name))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException(ERROR_PREFIX + "존재하지 않는 노선입니다."));
+                .orElseThrow(() -> new IllegalArgumentException(ERROR_PREFIX + "존재하지 않는 노선입니다.\n"));
     }
 }
