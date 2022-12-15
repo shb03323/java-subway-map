@@ -33,24 +33,24 @@ public class SubwayInitializer {
     }
 
     private static void initLineTwoSection(Line line) {
-        SectionRepository.addLine(line);
-        SectionRepository.addSection(line, StationRepository.findByName("교대역"), 0);
-        SectionRepository.addSection(line, StationRepository.findByName("강남역"), 1);
+        Station upperStation = StationRepository.findByName("교대역");
+        Station lowerStation = StationRepository.findByName("강남역");
+        SectionRepository.addLine(line, upperStation, lowerStation);
         SectionRepository.addSection(line, StationRepository.findByName("역삼역"), 2);
     }
 
     private static void initLineThreeSection(Line line) {
-        SectionRepository.addLine(line);
-        SectionRepository.addSection(line, StationRepository.findByName("교대역"), 0);
-        SectionRepository.addSection(line, StationRepository.findByName("남부터미널역"), 1);
+        Station upperStation = StationRepository.findByName("교대역");
+        Station lowerStation = StationRepository.findByName("남부터미널역");
+        SectionRepository.addLine(line, upperStation, lowerStation);
         SectionRepository.addSection(line, StationRepository.findByName("양재역"), 2);
         SectionRepository.addSection(line, StationRepository.findByName("매봉역"), 3);
     }
 
     private static void initLineSinbundangSection(Line line) {
-        SectionRepository.addLine(line);
-        SectionRepository.addSection(line, StationRepository.findByName("강남역"), 0);
-        SectionRepository.addSection(line, StationRepository.findByName("양재역"), 1);
+        Station upperStation = StationRepository.findByName("강남역");
+        Station lowerStation = StationRepository.findByName("양재역");
+        SectionRepository.addLine(line, upperStation, lowerStation);
         SectionRepository.addSection(line, StationRepository.findByName("양재시민의숲역"), 2);
     }
 }

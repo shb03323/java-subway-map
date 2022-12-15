@@ -34,6 +34,18 @@ public class OutputView {
         System.out.println();
     }
 
+    public static void printLineMenu() {
+        System.out.println(OUTPUT_PREFIX + "노선 관리 화면\n"
+                + "1. 노선 등록\n"
+                + "2. 노선 삭제\n"
+                + "3. 노선 조회\n"
+                + "B. 돌아가기\n");
+    }
+
+    public static void printLineAddSuccess() {
+        System.out.println(INFO_PREFIX + "지하철 노선이 등록되었습니다.\n");
+    }
+
     public static void printErrorMessage(String message) {
         System.out.println(message);
     }

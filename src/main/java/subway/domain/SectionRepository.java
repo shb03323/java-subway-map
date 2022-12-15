@@ -12,7 +12,10 @@ public class SectionRepository {
         section.addSection(station, index);
     }
 
-    public static void addLine(Line line) {
-        sections.put(line, new Section());
+    public static void addLine(Line line, Station upperStation, Station lowerStation) {
+        Section section = new Section();
+        section.addSection(upperStation, 0);
+        section.addSection(lowerStation, 1);
+        sections.put(line, section);
     }
 }
