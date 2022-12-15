@@ -18,4 +18,9 @@ public class SectionRepository {
         section.addSection(lowerStation, 1);
         sections.put(line, section);
     }
+
+    public static void deleteSection(Line line, Station station) {
+        Section section = sections.get(line);
+        section.deleteSection(station);
+    }
 }

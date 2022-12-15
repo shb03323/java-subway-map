@@ -43,18 +43,22 @@ public class SectionController implements Controllable {
     }
 
     private void addSection() {
-        String lineName = InputView.inputLine();
+        String lineName = InputView.inputSectionLineAdd();
         Line line = LineRepository.findByName(lineName);
-        String stationName = InputView.inputStation();
+        String stationName = InputView.inputSectionStationAdd();
         Station station = StationRepository.findByName(stationName);
         int index = InputView.inputSequence();
         SectionRepository.addSection(line, station, index);
+        OutputView.printSectionAddSuccess();
     }
 
     private void deleteSection() {
-        String stationName = InputView.inputStationDelete();
-        StationRepository.deleteStation(stationName);
-        OutputView.printStationDeleteSuccess();
+        String lineName = InputView.inputSectionLineDelete();
+        Line line = LineRepository.findByName(lineName);
+        String stationName = InputView.inputSectionStationDelete();
+        Station station = StationRepository.findByName(stationName);
+        SectionRepository.deleteSection(line, station);
+        OutputView.printSectionDeleteSuccess();
     }
 
     private void goBack() {}

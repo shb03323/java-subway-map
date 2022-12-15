@@ -63,6 +63,14 @@ public class OutputView {
                 + "B. 돌아가기\n");
     }
 
+    public static void printSectionAddSuccess() {
+        System.out.println(INFO_PREFIX + "구간이 등록되었습니다.\n");
+    }
+
+    public static void printSectionDeleteSuccess() {
+        System.out.println(INFO_PREFIX + "구간이 삭제되었습니다.\n");
+    }
+
     public static void printErrorMessage(String message) {
         System.out.println(message);
     }
