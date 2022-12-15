@@ -54,6 +54,7 @@ public class StationController implements Controllable {
     private void deleteStation() {
         String stationName = InputView.inputStationDelete();
         StationRepository.deleteStation(stationName);
+        OutputView.printStationDeleteSuccess();
     }
 
     private void searchStation() {

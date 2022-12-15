@@ -24,6 +24,10 @@ public class OutputView {
                 + "B. 돌아가기\n");
     }
 
+    public static void printStationDeleteSuccess() {
+        System.out.println(INFO_PREFIX + "지하철 역이 삭제되었습니다.\n");
+    }
+
     public static void printStations(List<String> stations) {
         System.out.println(OUTPUT_PREFIX + "역 목록");
         stations.forEach(station -> System.out.println(INFO_PREFIX + station));
