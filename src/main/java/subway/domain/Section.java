@@ -2,6 +2,7 @@ package subway.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static subway.view.MessagePrefix.ERROR_PREFIX;
 
@@ -21,7 +22,14 @@ public class Section {
 
     public void deleteSection(Station station) {
         validateStationNotExist(station);
+        validateSectionLength();
         stations.remove(station);
+    }
+
+    public List<String> getSection() {
+        return stations.stream()
+                .map(Station::getName)
+                .collect(Collectors.toUnmodifiableList());
     }
 
     private void validateIndex(int index) {

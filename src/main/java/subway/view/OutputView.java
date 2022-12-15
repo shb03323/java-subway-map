@@ -1,6 +1,7 @@
 package subway.view;
 
 import java.util.List;
+import java.util.Map;
 
 import static subway.view.MessagePrefix.INFO_PREFIX;
 import static subway.view.MessagePrefix.OUTPUT_PREFIX;
@@ -69,6 +70,16 @@ public class OutputView {
 
     public static void printSectionDeleteSuccess() {
         System.out.println(INFO_PREFIX + "구간이 삭제되었습니다.\n");
+    }
+
+    public static void printSubwayLoad(Map<String, List<String>> sections) {
+        System.out.println(OUTPUT_PREFIX + "지하철 노선도");
+        sections.keySet().forEach(line -> {
+            System.out.println(INFO_PREFIX + line);
+            System.out.println(INFO_PREFIX + "---");
+            sections.get(line).forEach(station -> System.out.println(INFO_PREFIX + station));
+            System.out.println();
+        });
     }
 
     public static void printErrorMessage(String message) {
