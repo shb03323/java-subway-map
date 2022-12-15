@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static subway.view.MessagePrefix.ERROR_PREFIX;
 
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
 
-    public static List<Station> stations() {
-        return Collections.unmodifiableList(stations);
+    public static List<String> readStations() {
+        return stations.stream()
+                .map(Station::getName)
+                .collect(Collectors.toList());
     }
 
     public static void addStation(Station station) {

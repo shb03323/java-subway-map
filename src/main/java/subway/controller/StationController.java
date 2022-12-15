@@ -7,6 +7,7 @@ import subway.view.InputView;
 import subway.view.OutputView;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class StationController implements Controllable {
@@ -56,10 +57,9 @@ public class StationController implements Controllable {
     }
 
     private void searchStation() {
-
+        List<String> stations = StationRepository.readStations();
+        OutputView.printStations(stations);
     }
 
-    private void goBack() {
-
-    }
+    private void goBack() {}
 }

@@ -1,5 +1,8 @@
 package subway.view;
 
+import java.util.List;
+
+import static subway.view.MessagePrefix.INFO_PREFIX;
 import static subway.view.MessagePrefix.OUTPUT_PREFIX;
 
 public class OutputView {
@@ -19,6 +22,12 @@ public class OutputView {
                 + "2. 역 삭제\n"
                 + "3. 역 조회\n"
                 + "B. 돌아가기\n");
+    }
+
+    public static void printStations(List<String> stations) {
+        System.out.println(OUTPUT_PREFIX + "역 목록");
+        stations.forEach(station -> System.out.println(INFO_PREFIX + station));
+        System.out.println();
     }
 
     public static void printErrorMessage(String message) {
