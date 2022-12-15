@@ -46,6 +46,10 @@ public class OutputView {
         System.out.println(INFO_PREFIX + "지하철 노선이 등록되었습니다.\n");
     }
 
+    public static void printLineDeleteSuccess() {
+        System.out.println(INFO_PREFIX + "지하철 노선이 삭제되었습니다.\n");
+    }
+
     public static void printErrorMessage(String message) {
         System.out.println(message);
     }

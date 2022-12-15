@@ -60,7 +60,9 @@ public class LineController implements Controllable {
     }
 
     private void deleteLine() {
-
+        String lineName = InputView.inputLineDelete();
+        LineRepository.deleteLineByName(lineName);
+        OutputView.printLineDeleteSuccess();
     }
 
     private void searchLine() {

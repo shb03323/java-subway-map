@@ -12,6 +12,7 @@ public class InputView {
     private static final String INPUT_LINE_ADD = "등록할 노선 이름을 입력하세요.";
     private static final String INPUT_STATION_UPPER = "등록할 노선의 상행 종점역 이름을 입력하세요.";
     private static final String INPUT_STATION_LOWER = "등록할 노선의 하행 종점역 이름을 입력하세요.";
+    private static final String INPUT_LINE_DELETE = "삭제할 노선 이름을 입력하세요.";
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -52,6 +53,13 @@ public class InputView {
 
     public static String inputLowerStation() {
         System.out.println(OUTPUT_PREFIX + INPUT_STATION_LOWER);
+        String input = scanner.next();
+        System.out.println();
+        return input;
+    }
+
+    public static String inputLineDelete() {
+        System.out.println(OUTPUT_PREFIX + INPUT_LINE_DELETE);
         String input = scanner.next();
         System.out.println();
         return input;
