@@ -18,6 +18,7 @@ public class MainMenuController {
 
     public void run() {
         OutputView.printMainMenu();
+        SubwayInitializer.init();
         MainMenu selection = selectMenu();
         while (!selection.equals(MainMenu.QUIT)) {
             progress(selection);

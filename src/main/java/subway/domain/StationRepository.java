@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import static subway.view.MessagePrefix.ERROR_PREFIX;
+
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
 
@@ -18,5 +20,12 @@ public class StationRepository {
 
     public static boolean deleteStation(String name) {
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
+    }
+
+    public static Station findByName(String name) {
+        return stations.stream()
+                .filter(station -> station.getName().equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(ERROR_PREFIX + "존재하지 않는 역입니다."));
     }
 }
