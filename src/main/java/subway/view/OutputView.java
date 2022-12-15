@@ -50,6 +50,12 @@ public class OutputView {
         System.out.println(INFO_PREFIX + "지하철 노선이 삭제되었습니다.\n");
     }
 
+    public static void printLines(List<String> lines) {
+        System.out.println(OUTPUT_PREFIX + "노선 목록");
+        lines.forEach(line -> System.out.println(INFO_PREFIX + line));
+        System.out.println();
+    }
+
     public static void printErrorMessage(String message) {
         System.out.println(message);
     }

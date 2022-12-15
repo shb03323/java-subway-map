@@ -5,6 +5,7 @@ import subway.view.InputView;
 import subway.view.OutputView;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class LineController implements Controllable {
@@ -66,7 +67,8 @@ public class LineController implements Controllable {
     }
 
     private void searchLine() {
-
+        List<String> lines = LineRepository.readLines();
+        OutputView.printLines(lines);
     }
 
     private void goBack() {}

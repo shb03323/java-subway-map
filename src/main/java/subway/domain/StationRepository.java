@@ -14,7 +14,7 @@ public class StationRepository {
     public static List<String> readStations() {
         return stations.stream()
                 .map(Station::getName)
-                .collect(Collectors.toList());
+                .collect(Collectors.toUnmodifiableList());
     }
 
     public static void addStation(Station station) {
